@@ -1,5 +1,5 @@
 import { connection } from "next/server";
-import { getPhotosDelayed } from "@/data/queries/photos";
+import { getPhotos } from "@/data/queries/photos";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const photographers = [
@@ -11,7 +11,7 @@ const photographers = [
 
 export async function PhotographerList() {
   await connection();
-  const photos = await getPhotosDelayed();
+  const photos = await getPhotos();
 
   return (
     <div className="space-y-6">
