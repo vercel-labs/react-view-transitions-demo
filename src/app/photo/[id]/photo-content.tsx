@@ -18,7 +18,7 @@ export async function PhotoContent({ id }: { id: string }) {
     <>
       <ViewTransition name={`photo-${photo.id}`} share="morph">
         <div
-          className="relative mx-auto mb-4 sm:mb-8 max-h-[35vh] md:max-h-[45vh] lg:max-h-[60vh] max-w-full overflow-hidden rounded-lg"
+          className="relative mx-auto mb-4 sm:mb-8 max-h-[30vh] md:max-h-[35vh] lg:max-h-[45vh] max-w-full overflow-hidden rounded-lg"
           style={{ aspectRatio: `${photo.w}/${photo.h}` }}
         >
           <Image
@@ -97,7 +97,7 @@ export function PhotoContentSkeleton() {
   return (
     <>
       <div
-        className="relative mx-auto mb-4 sm:mb-8 max-h-[35vh] md:max-h-[45vh] lg:max-h-[60vh] max-w-full overflow-hidden rounded-lg bg-white/5 animate-pulse"
+        className="relative mx-auto mb-4 sm:mb-8 max-h-[30vh] md:max-h-[35vh] lg:max-h-[45vh] max-w-full overflow-hidden rounded-lg bg-white/5 animate-pulse"
         style={{ aspectRatio: "4/3" }}
       />
       <div className="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-6 border-t border-white/10 pt-8 animate-pulse">
