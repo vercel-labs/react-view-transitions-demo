@@ -26,28 +26,6 @@ The `plain` branch is intentionally animation-free. It serves as the starting po
 | Photo thumbnail → hero | Gallery → Detail | Shared element morph |
 | Forward/back navigation | All pages | Directional slides with `transitionTypes` |
 
-## Tech Stack
-
-- **Next.js 16** (App Router, Cache Components)
-- **React 19** (`react@canary` for `<ViewTransition>`)
-- **Tailwind CSS v4**
-- **shadcn/ui** (base-nova)
-
-## Architecture
-
-- **`data/queries/`** — Data access layer with `"use cache"` + `cacheTag`/`cacheLife`, wrapped in React `cache()` for request deduplication
-- **`lib/`** — Types, raw data, and client-side utilities
-- **Pages as static shells** — Dynamic data fetching pushed into child server components with Suspense boundaries
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
 ## Using the Skill
 
 Install the [React View Transitions skill](https://github.com/vercel-labs/agent-skills/tree/main/skills/react-view-transitions) into your agent:
