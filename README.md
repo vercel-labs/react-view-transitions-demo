@@ -1,15 +1,17 @@
 # React View Transitions Demo
 
-A Next.js photography gallery built to showcase the **React View Transitions** agent skill. The app provides a feature-rich surface area — sortable grids, search filtering, Suspense loading states, toggleable panels, and keyed content swaps — specifically designed so each feature maps to a view transition pattern from the skill.
+A Next.js photography gallery built to showcase the [React View Transitions agent skill](https://github.com/vercel-labs/agent-skills/tree/main/skills/react-view-transitions). The app provides a feature-rich surface area — sortable grids, search filtering, Suspense loading states, toggleable panels, and keyed content swaps — specifically designed so each feature maps to a view transition pattern from the skill.
+
+**[Live Demo (animated)](https://react-view-transitions-demo.labs.vercel.dev/)**
 
 ## Branches
 
-| Branch | Purpose |
-|--------|---------|
-| `main` | Feature set only — no `<ViewTransition>` animations |
-| `with-animations` | Full implementation with all view transition patterns applied |
+| Branch | Description | Deployment |
+|--------|-------------|------------|
+| [`main`](https://github.com/vercel-labs/react-view-transitions-demo/tree/main) | Base app — no `<ViewTransition>` animations | — |
+| [`animated`](https://github.com/vercel-labs/react-view-transitions-demo/tree/animated) | All view transition patterns applied | [react-view-transitions-demo.labs.vercel.dev](https://react-view-transitions-demo.labs.vercel.dev/) |
 
-The `main` branch is intentionally animation-free. Install the [React View Transitions skill](https://github.com/vercel-labs/agent-skills) and ask your agent to "add view transitions" — the skill guides it to apply the right pattern to each feature.
+The `main` branch is intentionally animation-free. It serves as the starting point — install the [React View Transitions skill](https://github.com/vercel-labs/agent-skills/tree/main/skills/react-view-transitions) and ask your agent to "add view transitions". The skill guides it to apply the right pattern to each feature. The `animated` branch shows the result.
 
 ## Features → View Transition Patterns
 
@@ -48,7 +50,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Using the Skill
 
-Install the React View Transitions skill into your agent, then prompt it against this codebase:
+Install the [React View Transitions skill](https://github.com/vercel-labs/agent-skills/tree/main/skills/react-view-transitions) into your agent, then prompt it against this codebase:
 
 ```
 Add view transitions to this app using the view transitions skill
