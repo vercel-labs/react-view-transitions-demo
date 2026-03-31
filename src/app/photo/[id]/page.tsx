@@ -27,15 +27,16 @@ export default async function PhotoPage({
         ← Gallery
       </Link>
 
-      <div className="flex justify-center mb-8">
+      <div
+        className="relative mx-auto mb-8 max-h-[80vh] max-w-full overflow-hidden rounded-lg"
+        style={{ aspectRatio: `${photo.w}/${photo.h}` }}
+      >
         <Image
           data-photo-id={photo.id}
           src={getPicsum(photo.seed, photo.w, photo.h)}
           alt={`${photo.title} — ${photo.location}`}
-          width={photo.w}
-          height={photo.h}
-          className="max-h-[80vh] w-auto object-contain rounded-lg"
-          style={{ aspectRatio: `${photo.w}/${photo.h}` }}
+          fill
+          className="object-contain"
           priority
           sizes="(max-width: 1024px) 100vw, 80vw"
         />
