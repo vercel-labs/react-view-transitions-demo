@@ -28,7 +28,7 @@ export default async function PhotoPage({
       </Link>
 
       <div
-        className="relative mx-auto mb-8 max-h-[80vh] max-w-full overflow-hidden rounded-lg"
+        className="relative mx-auto mb-8 max-h-[60vh] max-w-full overflow-hidden rounded-lg"
         style={{ aspectRatio: `${photo.w}/${photo.h}` }}
       >
         <Image
