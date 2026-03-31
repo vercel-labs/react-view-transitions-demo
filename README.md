@@ -39,8 +39,13 @@ Install the skill and prompt your agent against the [`plain`](https://github.com
 npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-view-transitions
 ```
 
+Output is not deterministic — the agent may apply all patterns or only a subset depending on how you prompt it. For best results, guide the agent toward the specific animations you want:
+
 ```
-Add view transitions to this app using the view transitions skill
+Add shared element morphs between the photo grid and detail page,
+and directional slide animations for forward/back navigation.
 ```
+
+You can also iterate: review the first pass, then ask for additions like "Now add Suspense reveal animations" or "Isolate the header so it doesn't animate with the page." Referring to the skill's Implementation Guide steps by number (e.g., "Follow Step 5") also works well.
 
 The [`main`](https://github.com/vercel-labs/react-view-transitions-demo/tree/main) branch shows the result. See the [full code diff](https://github.com/vercel-labs/react-view-transitions-demo/pull/1).
