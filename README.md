@@ -30,7 +30,6 @@ A Next.js photography gallery showcasing the [React View Transitions agent skill
 - **Photo detail page** — Responsive layout with hero image and metadata
 - **Photographers page** — Tab-based navigation between photographer collections
 - **Suspense boundaries** — Skeleton loading states throughout
-- **Simulated delays** — Data queries include artificial delays so Suspense skeletons and their transitions are visible. In a real app, this data would likely be static or cached.
 
 ## Try It
 
