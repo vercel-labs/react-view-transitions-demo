@@ -1,15 +1,15 @@
 # React View Transitions Demo
 
-A Next.js photography gallery showcasing the [React View Transitions agent skill](https://github.com/vercel-labs/agent-skills/tree/main/skills/react-view-transitions). Each feature in the app maps to a view transition pattern the skill can apply.
+A Next.js photography gallery showcasing the [React View Transitions agent skill](https://github.com/vercel-labs/agent-skills/tree/main/skills/react-view-transitions). The [`main`](https://github.com/vercel-labs/react-view-transitions-demo/tree/main) branch has all view transition patterns applied; the [`plain`](https://github.com/vercel-labs/react-view-transitions-demo/tree/plain) branch is the base app without animations.
 
 **[Live Demo](https://react-view-transitions-demo.labs.vercel.dev/)**
 
-## Branches
+## App Features
 
-| Branch | Description |
-|--------|-------------|
-| [`main`](https://github.com/vercel-labs/react-view-transitions-demo/tree/main) | All view transition patterns applied |
-| [`plain`](https://github.com/vercel-labs/react-view-transitions-demo/tree/plain) | Base app — no `<ViewTransition>` animations |
+- **Gallery page** — Searchable, sortable photo grid with URL-based state (`?q=...&sort=...`)
+- **Photo detail page** — Responsive layout with hero image and metadata
+- **Photographers page** — Tab-based navigation between photographer collections
+- **Suspense boundaries** — Skeleton loading states throughout
 
 ## View Transition Patterns
 
@@ -24,16 +24,9 @@ A Next.js photography gallery showcasing the [React View Transitions agent skill
 | Element isolation | Header and search bar excluded from page slides via `viewTransitionName` |
 | Reduced motion | All animations disabled with `prefers-reduced-motion: reduce` |
 
-## App Features
-
-- **Gallery page** — Searchable, sortable photo grid with URL-based state (`?q=...&sort=...`)
-- **Photo detail page** — Responsive layout with hero image and metadata
-- **Photographers page** — Tab-based navigation between photographer collections
-- **Suspense boundaries** — Skeleton loading states throughout
-
 ## Try It
 
-Install the skill and prompt your agent against the [`plain`](https://github.com/vercel-labs/react-view-transitions-demo/tree/plain) branch:
+Install the skill and prompt your agent against the `plain` branch:
 
 ```bash
 npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-view-transitions
@@ -46,4 +39,4 @@ Add shared element morphs between the photo grid and detail page,
 and directional slide animations for forward/back navigation.
 ```
 
-The [`main`](https://github.com/vercel-labs/react-view-transitions-demo/tree/main) branch shows the result. See the [full code diff](https://github.com/vercel-labs/react-view-transitions-demo/pull/1).
+See the [full code diff](https://github.com/vercel-labs/react-view-transitions-demo/pull/1) between `plain` and `main`.
