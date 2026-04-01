@@ -1,4 +1,3 @@
-import { ViewTransition } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getPhotoImage } from "@/lib/images";
@@ -21,7 +20,6 @@ export async function PhotoContent({ id }: { id: string }) {
           {prevPhoto ? (
             <Link
               href={`/photo/${prevPhoto.id}`}
-              transitionTypes={["nav-back"]}
               className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-black/50 text-white/60 hover:text-white hover:border-white/30 transition-colors"
             >
               ←
@@ -33,29 +31,26 @@ export async function PhotoContent({ id }: { id: string }) {
           )}
         </div>
 
-        <ViewTransition name={`photo-${photo.id}`} share="morph">
-          <div
-            className="relative mx-auto max-h-[25vh] md:max-h-[30vh] lg:max-h-[40vh] max-w-full overflow-hidden rounded-lg"
-            style={{ aspectRatio: `${photo.w}/${photo.h}` }}
-          >
-            <Image
-              data-photo-id={photo.id}
-              src={getPhotoImage(photo.seed)}
-              alt={`${photo.title} — ${photo.location}`}
-              fill
-              className="object-contain"
-              priority
-              sizes="(max-width: 1024px) 100vw, 80vw"
-              placeholder="blur"
-            />
-          </div>
-        </ViewTransition>
+        <div
+          className="relative mx-auto max-h-[25vh] md:max-h-[30vh] lg:max-h-[40vh] max-w-full overflow-hidden rounded-lg"
+          style={{ aspectRatio: `${photo.w}/${photo.h}` }}
+        >
+          <Image
+            data-photo-id={photo.id}
+            src={getPhotoImage(photo.seed)}
+            alt={`${photo.title} — ${photo.location}`}
+            fill
+            className="object-contain"
+            priority
+            sizes="(max-width: 1024px) 100vw, 80vw"
+            placeholder="blur"
+          />
+        </div>
 
         <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
           {nextPhoto ? (
             <Link
               href={`/photo/${nextPhoto.id}`}
-              transitionTypes={["nav-forward"]}
               className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-black/50 text-white/60 hover:text-white hover:border-white/30 transition-colors"
             >
               →
@@ -79,10 +74,7 @@ export async function PhotoContent({ id }: { id: string }) {
               {photo.photographer} &middot; {photo.year}
             </p>
             <div className="pt-1">
-              <Link
-                href={`/collection/${photo.collection}`}
-                transitionTypes={["nav-forward"]}
-              >
+              <Link href={`/collection/${photo.collection}`}>
                 <Badge variant="outline" className="font-mono text-xs">
                   {photo.photographer}
                 </Badge>

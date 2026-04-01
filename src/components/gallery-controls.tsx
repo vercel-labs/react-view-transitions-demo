@@ -12,10 +12,7 @@ const SORT_OPTIONS: { key: SortKey; label: string }[] = [
 
 export function GalleryControlsSkeleton() {
   return (
-    <div
-      className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8 animate-pulse"
-      style={{ viewTransitionName: "gallery-controls" }}
-    >
+    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8 animate-pulse">
       <div className="w-full sm:w-64 h-[30px] rounded border border-white/10 bg-white/5" />
       <div className="flex items-center gap-1">
         <span className="font-mono text-xs text-white/30 mr-1">Sort:</span>
@@ -71,10 +68,7 @@ export function GalleryControls() {
   }
 
   return (
-    <div
-      className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8"
-      style={{ viewTransitionName: "gallery-controls" }}
-    >
+    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
       <input
         type="text"
         value={search}

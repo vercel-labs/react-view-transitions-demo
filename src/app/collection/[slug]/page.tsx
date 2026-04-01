@@ -1,4 +1,4 @@
-import { Suspense, ViewTransition } from "react";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { CollectionGrid } from "./collection-grid";
 
@@ -17,16 +17,8 @@ export default async function CollectionPage({
   if (!COLLECTION_SLUGS.includes(slug)) notFound();
 
   return (
-    <Suspense fallback={<CollectionGridSkeleton />}>
-      <ViewTransition
-        key={slug}
-        name="collection-content"
-        share="auto"
-        enter="auto"
-        default="none"
-      >
-        <CollectionGrid slug={slug} />
-      </ViewTransition>
+    <Suspense key={slug} fallback={<CollectionGridSkeleton />}>
+      <CollectionGrid slug={slug} />
     </Suspense>
   );
 }
