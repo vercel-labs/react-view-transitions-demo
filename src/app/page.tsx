@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, ViewTransition } from "react";
 import {
   GalleryContent,
   GalleryContentSkeleton,
@@ -14,14 +14,36 @@ export default function GalleryPage({
   searchParams: Promise<{ q?: string; sort?: string }>;
 }) {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-      <Suspense fallback={<GalleryControlsSkeleton />}>
-        <GalleryControls />
-      </Suspense>
+    <ViewTransition
+      enter={{
+        "nav-forward": "fade-in",
+        "nav-back": "fade-in",
+        default: "none",
+      }}
+      exit={{
+        "nav-forward": "nav-forward",
+        "nav-back": "nav-back",
+        default: "none",
+      }}
+      default="none"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <Suspense fallback={<GalleryControlsSkeleton />}>
+          <GalleryControls />
+        </Suspense>
 
-      <Suspense fallback={<GalleryContentSkeleton />}>
-        <GalleryContent searchParams={searchParams} />
-      </Suspense>
-    </div>
+        <Suspense
+          fallback={
+            <ViewTransition exit="slide-down" default="none">
+              <GalleryContentSkeleton />
+            </ViewTransition>
+          }
+        >
+          <ViewTransition enter="slide-up" default="none">
+            <GalleryContent searchParams={searchParams} />
+          </ViewTransition>
+        </Suspense>
+      </div>
+    </ViewTransition>
   );
 }

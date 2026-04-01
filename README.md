@@ -29,18 +29,18 @@ A Next.js photography gallery showcasing the [React View Transitions agent skill
 Install the skill and prompt your agent against the `plain` branch:
 
 ```bash
-npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-view-transitions
+npx skills install https://github.com/vercel-labs/react-view-transitions-skill
 ```
 
 ```
 Add view transitions to this app
 ```
 
-Output is not deterministic. For best results, guide the agent toward the specific animations you want and iterate:
+Output is not deterministic — the agent may not cover every page or pattern in one pass. Review what it did, then ask for what's missing:
 
 ```
-Add shared element morphs between the photo grid and detail page,
-and directional slide animations for forward/back navigation.
+Add Suspense reveal animations to the skeleton fallbacks.
+Also add element isolation to the header so it doesn't slide with the page.
 ```
 
 See the [full code diff](https://github.com/vercel-labs/react-view-transitions-demo/pull/2) between `plain` and `main`.

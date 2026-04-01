@@ -12,6 +12,7 @@ export default function CollectionLayout({
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <Link
         href="/"
+        transitionTypes={["nav-back"]}
         className="inline-flex items-center gap-1.5 font-mono text-xs text-white/40 hover:text-white transition-colors mb-8"
       >
         ← Gallery
