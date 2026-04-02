@@ -32,7 +32,7 @@ export async function PhotoContent({ id }: { id: string }) {
         </div>
 
         <div
-          className="relative mx-auto max-h-[25vh] md:max-h-[30vh] lg:max-h-[40vh] max-w-full overflow-hidden rounded-lg"
+          className="relative mx-auto max-h-[45vh] md:max-h-[55vh] lg:max-h-[60vh] max-w-full overflow-hidden rounded-lg"
           style={{ aspectRatio: `${photo.w}/${photo.h}` }}
         >
           <Image
@@ -95,7 +95,7 @@ export function PhotoContentSkeleton() {
           <div className="w-10 h-10 rounded-full border border-white/5 bg-white/5" />
         </div>
         <div
-          className="mx-auto max-h-[25vh] md:max-h-[30vh] lg:max-h-[40vh] overflow-hidden rounded-lg bg-white/5"
+          className="mx-auto max-h-[45vh] md:max-h-[55vh] lg:max-h-[60vh] overflow-hidden rounded-lg bg-white/5"
           style={{ aspectRatio: "4/3" }}
         />
         <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
