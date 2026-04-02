@@ -22,7 +22,7 @@ The [`main`](https://github.com/vercel-labs/react-view-transitions-demo/tree/mai
 | Skeleton → content | Skeleton slides down and fades out, content slides up | Separate `<ViewTransition>` on Suspense fallback (`exit`) and content (`enter`) |
 | Photographer tabs | Grid crossfades when switching between photographers | `<ViewTransition key={slug} name="collection-content" share="auto">` forces remount with shared morph |
 | Search / filter | Grid animates as photos are added or removed | `startTransition` + `router.replace` triggers list-item `<ViewTransition>` reorder |
-| Sort buttons | Active button highlights instantly before server responds | `useOptimistic` updates sort state inside `startTransition` |
+| Sort buttons | Active button highlights instantly without waiting for the transition to finish | `useOptimistic` ensures interactive state isn't blocked by the view transition |
 | Header & search bar | Stay fixed in place while everything else slides | `viewTransitionName` on the element + CSS `animation: none` on its `::view-transition-group` |
 | Reduced motion | All animations are disabled | `prefers-reduced-motion: reduce` sets `animation-duration: 0s` on all VT pseudo-elements |
 
