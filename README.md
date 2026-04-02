@@ -29,7 +29,7 @@ A Next.js photography gallery showcasing the [React View Transitions agent skill
 Install the skill and prompt your agent against the `plain` branch:
 
 ```bash
-npx skills install https://github.com/vercel-labs/react-view-transitions-skill
+npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-view-transitions
 ```
 
 ```
