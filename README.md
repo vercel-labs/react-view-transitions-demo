@@ -35,7 +35,7 @@ npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-
 ```
 
 ```
-Add view transitions to this app
+Add view transitions to this app using the view transition skill
 ```
 
 Output is not deterministic — the agent may not cover every page or pattern in one pass. Review what it did, then ask for what's missing:
