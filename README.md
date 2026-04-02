@@ -1,6 +1,8 @@
 # React View Transitions Demo
 
-A Next.js photography gallery showcasing the [React View Transitions agent skill](https://github.com/vercel-labs/agent-skills/tree/main/skills/react-view-transitions). The [`main`](https://github.com/vercel-labs/react-view-transitions-demo/tree/main) branch has all view transition patterns applied; the [`plain`](https://github.com/vercel-labs/react-view-transitions-demo/tree/plain) branch is the base app without animations.
+A Next.js photography gallery demonstrating React View Transitions — shared element morphs, directional navigation, Suspense reveals, and more. Also serves as a testing ground for the [React View Transitions agent skill](https://github.com/vercel-labs/agent-skills/tree/main/skills/react-view-transitions).
+
+The [`main`](https://github.com/vercel-labs/react-view-transitions-demo/tree/main) branch has all view transition patterns applied; the [`plain`](https://github.com/vercel-labs/react-view-transitions-demo/tree/plain) branch is the base app without animations.
 
 **[Live Demo](https://react-view-transitions-demo.labs.vercel.dev/)**
 
