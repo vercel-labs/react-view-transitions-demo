@@ -34,6 +34,7 @@ export default async function PhotoPage({
           href="/"
           transitionTypes={["nav-back"]}
           className="inline-flex items-center gap-1.5 font-mono text-xs text-white/40 hover:text-white transition-colors mb-4 sm:mb-8"
+          style={{ viewTransitionName: "gallery-back-link" }}
         >
           ← Gallery
         </Link>

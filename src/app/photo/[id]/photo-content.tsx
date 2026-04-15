@@ -17,7 +17,7 @@ export async function PhotoContent({ id }: { id: string }) {
   return (
     <>
       <div className="relative mb-4 sm:mb-8">
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10" style={{ viewTransitionName: "gallery-nav-prev" }}>
           {prevPhoto ? (
             <Link
               href={`/photo/${prevPhoto.id}`}
@@ -51,7 +51,7 @@ export async function PhotoContent({ id }: { id: string }) {
           </div>
         </ViewTransition>
 
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10" style={{ viewTransitionName: "gallery-nav-next" }}>
           {nextPhoto ? (
             <Link
               href={`/photo/${nextPhoto.id}`}

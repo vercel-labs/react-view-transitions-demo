@@ -154,16 +154,25 @@
 }
 
 ::view-transition-group(site-header),
-::view-transition-group(gallery-controls) {
+::view-transition-group(gallery-controls),
+::view-transition-group(gallery-back-link),
+::view-transition-group(gallery-nav-prev),
+::view-transition-group(gallery-nav-next) {
   animation: none;
   z-index: 100;
 }
 ::view-transition-old(site-header),
-::view-transition-old(gallery-controls) {
+::view-transition-old(gallery-controls),
+::view-transition-old(gallery-back-link),
+::view-transition-old(gallery-nav-prev),
+::view-transition-old(gallery-nav-next) {
   display: none;
 }
 ::view-transition-new(site-header),
-::view-transition-new(gallery-controls) {
+::view-transition-new(gallery-controls),
+::view-transition-new(gallery-back-link),
+::view-transition-new(gallery-nav-prev),
+::view-transition-new(gallery-nav-next) {
   animation: none;
 }
 
