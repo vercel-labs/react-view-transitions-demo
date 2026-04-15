@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getPhotoImage } from "@/lib/images";
 import { getPhoto, getPhotos } from "@/data/queries/photos";
 import { Badge } from "@/components/ui/badge";
-
+import PhotoNavigationArrow from "./photo-navigation-arrow";
 
 export async function PhotoContent({ id }: { id: string }) {
   const [photo, allPhotos] = await Promise.all([getPhoto(id), getPhotos()]);
@@ -17,20 +17,11 @@ export async function PhotoContent({ id }: { id: string }) {
   return (
     <>
       <div className="relative mb-4 sm:mb-8">
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10" style={{ viewTransitionName: "gallery-nav-prev" }}>
-          {prevPhoto ? (
-            <Link
-              href={`/photo/${prevPhoto.id}`}
-              transitionTypes={["nav-back"]}
-              className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-black/50 text-white/60 hover:text-white hover:border-white/30 transition-colors"
-            >
-              ←
-            </Link>
-          ) : (
-            <span className="flex items-center justify-center w-10 h-10 rounded-full border border-white/5 bg-black/50 text-white/20 cursor-not-allowed">
-              ←
-            </span>
-          )}
+        <div
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10"
+          style={{ viewTransitionName: "gallery-nav-prev" }}
+        >
+          <PhotoNavigationArrow photo={prevPhoto} mode="prev" />
         </div>
 
         <ViewTransition name={`photo-${photo.id}`} share="morph" default="none">
@@ -51,20 +42,11 @@ export async function PhotoContent({ id }: { id: string }) {
           </div>
         </ViewTransition>
 
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10" style={{ viewTransitionName: "gallery-nav-next" }}>
-          {nextPhoto ? (
-            <Link
-              href={`/photo/${nextPhoto.id}`}
-              transitionTypes={["nav-forward"]}
-              className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-black/50 text-white/60 hover:text-white hover:border-white/30 transition-colors"
-            >
-              →
-            </Link>
-          ) : (
-            <span className="flex items-center justify-center w-10 h-10 rounded-full border border-white/5 bg-black/50 text-white/20 cursor-not-allowed">
-              →
-            </span>
-          )}
+        <div
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10"
+          style={{ viewTransitionName: "gallery-nav-next" }}
+        >
+          <PhotoNavigationArrow photo={nextPhoto} mode="next" />
         </div>
       </div>
 
